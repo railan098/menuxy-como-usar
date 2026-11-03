@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como usar o Menuxy</title>
+<meta name="description" content="Guia interativo do Menuxy: aprenda cada função do sistema na própria tela, passo a passo.">
+<link rel="icon" href="marca-menuxy.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="pular" href="#estudio">Pular para o guia</a>
+
+<header class="topo">
+  <a class="marca" href="#inicio" aria-label="Menuxy, início"><img src="marca-menuxy.webp" alt="" width="34" height="34"><span>Menuxy</span><small>Como usar</small></a>
+  <nav class="topo-nav" aria-label="Seções">
+    <a href="#trilhas">Trilhas</a>
+    <a href="#estudio">Guia passo a passo</a>
+  </nav>
+  <div class="topo-progresso" aria-live="polite">
+    <span class="anel" data-anel-geral style="--p:0"><span data-geral-num>0%</span></span>
+    <span class="topo-progresso-txt"><strong data-geral-feitos>0</strong> de <span data-geral-total>0</span> aprendidos</span>
+  </div>
+</header>
+
+<main>
+  <!-- Hero: a própria tela do Menuxy se explicando -->
+  <section class="hero" id="inicio">
+    <div class="hero-texto">
+      <h1 class="hero-titulo"><span class="linha">Aprenda o Menuxy</span> <span class="linha">na própria tela.</span></h1>
+      <p class="hero-sub">Cada função do sistema com a tela de verdade, um passo de cada vez. Veja onde clicar, depois pratique tocando você mesmo.</p>
+      <div class="hero-acoes">
+        <a class="btn btn-brasa" href="#trilhas" data-ir-trilha="primeiro-dia"><i class="bi bi-flag-fill" aria-hidden="true"></i> Começar pelo primeiro dia</a>
+        <a class="btn btn-linha" href="#estudio"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> Ver todos os assuntos</a>
+      </div>
+      <dl class="hero-numeros">
+        <div><dt data-total-topicos>31</dt><dd>assuntos</dd></div>
+        <div><dt data-total-passos>140</dt><dd>passos com a tela real</dd></div>
+        <div><dt>5</dt><dd>trilhas por função</dd></div>
+      </dl>
+    </div>
+
+    <figure class="demo" aria-label="Demonstração: comanda de uma mesa com os passos destacados">
+      <div class="demo-janela">
+        <div class="demo-barra" aria-hidden="true"><i></i><i></i><i></i><span>menuxy · Mesa 03</span></div>
+        <div class="demo-tela" data-demo>
+          <img src="telas/mesas.webp" alt="Tela da comanda da Mesa 03 no Menuxy" width="1366" height="860">
+          <span class="alvo alvo-demo" data-demo-alvo aria-hidden="true"><b data-demo-num>1</b></span>
+        </div>
+      </div>
+      <figcaption class="demo-legenda" data-demo-legenda aria-live="polite">Toque na mesa livre para abrir a comanda.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Trilhas por função -->
+  <section class="trilhas" id="trilhas" aria-labelledby="trilhasTitulo">
+    <div class="secao-cabeca">
+      <h2 id="trilhasTitulo">Qual é a sua função na loja?</h2>
+      <p>Escolha uma trilha e o guia mostra só o que você usa no dia a dia. Dá para trocar quando quiser.</p>
+    </div>
+    <div class="trilhas-grade" data-trilhas role="list"></div>
+  </section>
+
+  <!-- Estúdio: índice, tela e comanda de passos -->
+  <section class="estudio" id="estudio" aria-label="Guia passo a passo">
+    <aside class="indice" aria-label="Assuntos">
+      <div class="busca">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <input type="search" placeholder="O que você quer fazer? Ex.: trocar senha" data-busca aria-label="Buscar no guia" autocomplete="off">
+      </div>
+      <div class="trilha-ativa" data-trilha-ativa hidden>
+        <span data-trilha-ativa-nome></span>
+        <button type="button" class="link" data-limpar-trilha>Ver tudo</button>
+      </div>
+      <nav class="indice-lista" data-indice></nav>
+    </aside>
+
+    <div class="palco">
+      <header class="palco-cabeca">
+        <div class="palco-titulo">
+          <span class="palco-icone" aria-hidden="true"><i class="bi" data-topico-icone></i></span>
+          <div>
+            <p class="palco-grupo" data-topico-grupo></p>
+            <h2 data-topico-titulo></h2>
+          </div>
+        </div>
+        <div class="modo" role="radiogroup" aria-label="Modo">
+          <button type="button" role="radio" aria-checked="true" data-modo="ver"><i class="bi bi-eye" aria-hidden="true"></i> Ver</button>
+          <button type="button" role="radio" aria-checked="false" data-modo="praticar"><i class="bi bi-hand-index" aria-hidden="true"></i> Praticar</button>
+        </div>
+      </header>
+      <p class="palco-resumo" data-topico-resumo></p>
+
+      <div class="tela-moldura">
+        <div class="tela-rolagem" data-rolagem>
+          <div class="tela" data-tela>
+            <img data-tela-img alt="" decoding="async">
+            <div class="tela-pontos" data-pontos></div>
+            <div class="tela-toque" data-toque hidden aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="tela-aviso" data-aviso role="status" aria-live="polite"></p>
+        <button type="button" class="tela-lupa" data-lupa aria-label="Ampliar a tela"><i class="bi bi-arrows-angle-expand" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <article class="comanda" aria-label="Passos">
+      <div class="comanda-papel">
+        <header class="comanda-topo">
+          <span>COMANDA DE PASSOS</span>
+          <span data-comanda-cont>1/4</span>
+        </header>
+        <ol class="passos" data-passos></ol>
+        <div class="comanda-navega">
+          <button type="button" class="btn btn-linha" data-anterior><i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior</button>
+          <button type="button" class="btn btn-brasa" data-proximo>Próximo passo <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+        </div>
+        <p class="atalho">Dica: use as setas ← → do teclado.</p>
+        <div class="comanda-extra">
+          <section class="nota nota-exemplo">
+            <h3><i class="bi bi-shop" aria-hidden="true"></i> Na prática</h3>
+            <p data-topico-exemplo></p>
+          </section>
+          <section class="nota nota-dica">
+            <h3><i class="bi bi-lightbulb" aria-hidden="true"></i> Bom saber</h3>
+            <p data-topico-dica></p>
+          </section>
+        </div>
+        <div class="carimbo" data-carimbo aria-hidden="true"><span>APRENDIDO</span></div>
+      </div>
+      <button type="button" class="btn btn-proximo-topico" data-proximo-topico hidden></button>
+    </article>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Menuxy · Alves Protect. Ficou com dúvida? Fale com o suporte pelo WhatsApp <a href="https://wa.me/5564996714414" target="_blank" rel="noopener">(64) 99671-4414</a>.</p>
+  <button type="button" class="link" data-zerar>Recomeçar meu progresso</button>
+</footer>
+
+<dialog class="lupa" data-lupa-dialogo aria-label="Tela ampliada">
+  <button type="button" class="lupa-fechar" data-lupa-fechar aria-label="Fechar"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+  <img data-lupa-img alt="">
+</dialog>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
