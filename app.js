@@ -1,7 +1,4 @@
-/* Como usar o Menuxy — guia interativo.
-   Os dados (dados.js) saem de includes/guia_conteudo.php e assets/guia/telas.json
-   do sistema, então o guia daqui e o "Como usar" de dentro do Menuxy contam a
-   mesma coisa. */
+
 (() => {
   'use strict';
   const GRUPOS = window.MENUXY_GUIA || [];
